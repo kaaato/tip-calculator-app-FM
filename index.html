@@ -1,44 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet" />
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link href="./styles.css" rel="stylesheet" />
+    <script src="./main.js" defer></script>
+  </head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+  <body class="page">
+    <h1 class="visually-hidden">Frontend Mentor Challenge</h1>
+    <main>
+      <div class="wrapper">
+        <div class="box--img">
+          <img src="./images/logo.svg" alt="Splitter logo" width="87" height="54" />
+        </div>
+        <form class="form">
+          <div class="form__section form__section-1">
+            <div class="box--input">
+              <label class="box--input__label" for="bill">Bill</label>
+              <input class="box--input__input input" id="bill" type="text" name="bill" placeholder="0" />
+              <span class="box--input-error-message" aria-live="polite"></span>
+            </div>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+            <fieldset class="fieldset">
+              <legend class="fieldset__legend">Select Tip %</legend>
+              <div class="box--radio">
+                <label for="tip-1">5%</label>
+                <input id="tip-1" type="radio" name="tip" value="5">
+              </div>
+              <div class="box--radio">
+                <label for="tip-2">10%</label>
+                <input id="tip-2" type="radio" name="tip" value="10">
+              </div>
+              <div class="box--radio">
+                <label for="tip-3">15%</label>
+                <input id="tip-3" type="radio" name="tip" value="15" />
+              </div>
+              <div class="box--radio">
+                <label for="tip-4">25%</label>
+                <input id="tip-4" type="radio" name="tip" value="25" />
+              </div>
+              <div class="box--radio">
+                <label for="tip-5">50%</label>
+                <input id="tip-5" type="radio" name="tip" value="50" />
+              </div>
+              <div class="box--radio">
+                <label for="tip-6">Custom</label>
+                <input id="tip-6" type="radio" name="tip" value="custom" />
+                <input id="input-custom" class="custom input" type="text" name="customValue" aria-label="Custom value" placeholder="0" inputmode="numeric"/>
+              </div>
+            </fieldset>
+            <div class="fieldset-error-message" aria-live="polite"></div>
 
-  Bill
+            <div class="box--input">
+              <label class="box--input__label" for="number-of-people">Number of People</label>
+              <input class="box--input__input input" id="number-of-people" type="text" name="numberOfPeople" placeholder="0" inputmode="numeric" />
+              <span class="box--input-error-message" aria-live="polite"></span>
+            </div>
+          </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+          <div class="form__section form__section-2">
+            <div class="visually-hidden aria-live--summary" aria-live="polite"></div>
+            <div class="box-summary">
+              <div class="box-tip">
+                <p class="title-tip-1">Tip Amount<span class="title-tip-2">/ person</span></p>             
+                <p class="text-tip-1">$<span class="text-tip-2">0.00</span></p>
+              </div>
 
-  Number of People
+              <div class="box-total">
+                <p class="title-total-1">Total<span class="title-total-2">/ person</span></p>            
+                <p class="text-total-1">$<span class="text-total-2">0.00</span></p>
+              </div>              
+            </div>
 
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            <button class="button-reset" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+    </main>  
+  </body>
 </html>
